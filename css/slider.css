@@ -1,0 +1,86 @@
+.slider{
+    width: 80%;
+    max-width: 1600px;
+    margin: 0 auto;
+    position: relative;
+}
+.slider>.window{
+    background-color: #cb0101;
+    overflow: hidden;
+
+}
+.slider>.window>ul{
+    display: flex;
+    width: 300%;
+    transition: margin-left ease 1s;
+}
+.slider>.window>ul>li{
+    width: 33.333%;
+}
+.slider>.window>ul>li>img{
+    width: 100%;
+}
+
+/* точки */
+.slider>input{
+    display: none;
+}
+/* .slider>input+label{
+    display: block;
+    width: 0.7em;
+    height: 0.7em;
+    border: 2px solid #ffd5d5;
+    border-radius: 50%;
+    position: absolute;
+    left: 80%;
+    bottom: 1vh;
+    
+}
+ .slider>input+label[for="r1"]{
+    margin-left: -4vh;
+}
+.slider>input+label[for="r2"]{
+    margin-left: -2vh;
+}  */
+
+.slider>input:checked+label{
+    background-color: #cb0101;
+}
+
+.slider>#r1:checked~.window>ul{
+    margin-left: 0%;
+}
+.slider>#r2:checked~.window>ul{
+    margin-left: -100%;
+}
+.slider>#r3:checked~.window>ul{
+    margin-left: -200%;
+}
+
+
+/* точки */
+
+.slider>.arrow{
+    width: 38px;
+    height: 61px;
+    background-image: url(..//images/themes.gif);
+    position: absolute;
+    top: 50%;
+    margin-top: -18px;
+    display: none;
+    opacity: 0.8;
+}
+
+.slider>#r1:checked~#arrow2,
+.slider>#r2:checked~#arrow3{
+                            
+    right: 1vh;
+    display: block;
+    background-position: 100% 0;
+}
+.slider>#r2:checked~#arrow1,
+.slider>#r3:checked~#arrow2{
+    left: 1vh;
+    display: block;
+}
+
